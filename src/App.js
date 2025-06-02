@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/Header';
+import { useEffect, useState } from 'react';
+import { getProjectsApi } from './api/apiProject';
 
 function App() {
+
+    const [projects, setProjects] = useState(null);
+    const [projectsFiltred, setProjectsFiltred] = useState(null);
+    
+    useEffect(() => {
+      //Appel webservice
+      getProjectsApi().then(console.log);
+
+    }, []);
+
+    useEffect(() => {
+      setProjectsFiltred(projects);
+    }, [projects])
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <div> <Header /></div>
+
+    </>
   );
 }
 
