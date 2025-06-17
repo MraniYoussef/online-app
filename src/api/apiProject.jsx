@@ -28,8 +28,8 @@ export const searchProjectApi = async name => {
 export const addProjectApi = async data => {
     let res;
     try{
-
-    const res = await fetch (`${ENDPOINT}`, {
+        const idEmploye = data.idEmploye;
+        const res = await fetch(`${ENDPOINT}/${idEmploye}`, {
         method: 'POST',
         body: JSON.stringify(data),
         headers

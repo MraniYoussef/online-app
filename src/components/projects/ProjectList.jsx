@@ -4,7 +4,7 @@ function ProjectList({projects, deleteProjectCallBack, saveProjectCallback}) {
 
     return(
         <div>
-            {projects.map(project => <Project key={project.id} details={project} deleteProjectCallBack={deleteProjectCallBack} saveProjectCallback={saveProjectCallback}/>)}
+            {projects.map(project => <Project key={project.id} details={project} deleteProjectCallBack={deleteProjectCallBack} saveProjectCallback={saveProjectCallback} />)}
         </div>
     )
 }

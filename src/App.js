@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { addProjectApi, deleteProjectApi, getProjectsApi, saveProjectApi, searchProjectApi } from './api/apiProject';
 import SearchBar from './components/search/searchBar';
 import ProjectList from './components/projects/ProjectList';
+import AddProjectForm from './components/AddProjectForm/AddProjectForm';
 
 function App() {
 
@@ -70,10 +71,12 @@ function App() {
              </Header>
               <SearchBar FilterProjectsCallBack={filterProjects} resetProjectsCallBack={resetProjects} />
               {projects ? (
-                <ProjectList projects={projects} deleteProjectCallBack={deleteProject} saveProjectCallback={saveProject} />
+                <ProjectList projects={projects} deleteProjectCallBack={deleteProject} saveProjectCallback={saveProject} addListCallback={addProject} />
               ) : (
                 <div>Loading...</div>
               )}
+
+              <AddProjectForm  addProjectCallback={addProject} />
 
     </>
   );
